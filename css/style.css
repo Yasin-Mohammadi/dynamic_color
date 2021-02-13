@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'vazir';
+    src: url('../fonts/Vazir.woff') format('woff');
+}
+a:hover {
+    text-decoration: none;
+}
+
+body {
+    font-family: vazir;
+    background-color:#f5f5f5;
+}
+.box {
+    height: 500px;
+    width: 500px;
+    background-color: rgb(182, 0, 0);
+}
