@@ -16,67 +16,21 @@ jQuery(document).ready(function($) {
 		step = Math.ceil(step);
 		return step;
 	}
-	
-	console.log(cs)
-	console.log(ce)
-	for (let i = 0; i < iter; i++) {
+	var ii = 0;
+	setInterval(() => {
 		cs = {r: cs['r']+step['r'], g: cs['g']+step['g'], b: cs['b']+step['b']};
-		console.log(cs)
-		
+		$('.box').css({
+			'background-color': 'rgb('+cs["r"]+','+ cs["g"]+',' +cs["b"]+')',
+		});
+		ii++;
+		console.log(ii)
+		if(ii >= iter){
+			step['r'] = -step['r']; 
+			step['g'] = -step['g']; 
+			step['b'] = -step['b']; 
+			ii = 0;
+		}
 
-		
-	}
-	console.log(cs)
-	console.log(ce)
-
-
-		// $('.box').css({
-		// 	'color': 'rgb('+currentc["r"]+','+ currentc["g"]+',' +currentc["b"]+')',
-		// });
-
-
-
-
-	// var minColor ; var maxColor;var step; var iter= 5;
-	// change_color();joinn(minColor, maxColor, iter);colorize();
-	// var currentc = minColor;
-	// console.log(minColor)
-
-	// function colorize() {
-	// 	$('.box').css({
-	// 		'color': 'rgb('+currentc["r"]+','+ currentc["g"]+',' +currentc["b"]+')',
-	// 	});
-	// 	currentc.r = currentc.r + step.r;
-	// 	currentc.g = currentc.g + step.g;
-	// 	currentc.b = currentc.b + step.b;
-
-	// }
-
-
-	// $('#btn').click(function (e) { 
-	// 	e.preventDefault();
-	// 	$('.box').css({
-	// 		'color': 'rgb('+currentc.r+','+ currentc.g+',' +currentc.b+')',
-	// 		'background-color': 'rgb('+c2.r+','+ c2.g+',' +c2.b+')'
-	// 	});
-	// });
-	// function change_color() {
-	// 	var minr = Math.min(c1.r ,c2.r);	
-	// 	var ming = Math.min(c1.g ,c2.g);	
-	// 	var minb = Math.min(c1.b ,c2.b);
-		
-	// 	var maxr = Math.max(c1.r ,c2.r);	
-	// 	var maxg = Math.max(c1.g ,c2.g);	
-	// 	var maxb = Math.max(c1.b ,c2.b);
-
-	// 	minColor = {r: minr, g: ming, b:minb};
-	// 	maxColor = {r: maxr, g: maxg, b:maxb};
-		
-	// }
-
-
-
-
-	// setInterval('colorize()', 5000);
+	}, 3000);
 
 });
