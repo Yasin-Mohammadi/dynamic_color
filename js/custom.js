@@ -1,8 +1,8 @@
 jQuery(document).ready(function($) {
 
-	var cs = {r: 120, g: 100, b: 150}
-	var ce = {r: 100, g: 50, b: 250}
-	var iter = 5;
+	var cs = {r: 250, g: 150, b: 175}
+	var ce = {r: 150, g: 80, b: 20}
+	var iter = 100;
 	var step = {r:cunt_step(cs['r'], ce['r'], iter), g:cunt_step(cs['g'], ce['g'], iter), b:cunt_step(cs['b'], ce['b'], iter)};
 
 	/**
@@ -30,7 +30,6 @@ jQuery(document).ready(function($) {
 			step['b'] = -step['b']; 
 			ii = 0;
 		}
-
-	}, 3000);
+	}, 200);
 
 });
